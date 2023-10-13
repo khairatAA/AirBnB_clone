@@ -5,7 +5,7 @@ It provides a unique identifier for the instance objects
 Also handles the date the instance was created and updated
 """
 from datetime import datetime
-from models.engine import storage
+import models
 import uuid
 
 
@@ -37,7 +37,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
-            storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
         """A special method that prints a string"""
@@ -52,7 +52,7 @@ class BaseModel:
         updated_at with the current datetime
         """
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.save()
 
     def to_dict(self):
         """Returns a dictionary containing all
