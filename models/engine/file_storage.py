@@ -64,10 +64,6 @@ class FileStorage:
         try:
             file_path = FileStorage.__file_path
             with open(file_path, "r", encoding="utf-8") as json_file:
-               FileStorage.__objects = json.load(json_file)
+               obj_data = json.load(json_file)
         except FileNotFoundError:
             pass
-
-
-
-        
