@@ -233,4 +233,3 @@ if __name__ == '__main__':
             except EOFError:
                 break
             HBNB_instance.onecmd(command)
-            
