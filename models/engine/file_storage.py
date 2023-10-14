@@ -4,8 +4,13 @@ FileStorage class is a simple class
 It handles how data is stored & persisted within our application
 """
 import json
-from models.user import BaseModel
+from models.amenity import Amenity
+from models.base_model import BaseModel
+from models.city import City
 from models.user import User
+from models.place import Place
+from models.state import State
+from models.review import Review
 
 
 class FileStorage:

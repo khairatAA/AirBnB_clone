@@ -2,8 +2,13 @@
 """This contains the entry point of the command interpreter"""
 import cmd
 import models
+from models.amenity import Amenity
 from models.base_model import BaseModel
+from models.city import City
 from models.user import User
+from models.place import Place
+from models.state import State
+from models.review import Review
 # from models.engine.file_storage import FileStorage
 
 
@@ -14,7 +19,12 @@ class HBNBCommand(cmd.Cmd):
 
     class_mapping = {
         'BaseModel': BaseModel,
-        'User': User
+        'User': User,
+        'Place': Place,
+        'State': State,
+        'City': City,
+        'Amenity': Amenity,
+        'Review': Review
         # Add more class mappings as needed
     }
 
