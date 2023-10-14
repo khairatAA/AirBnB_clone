@@ -7,6 +7,7 @@ import json
 from models.user import BaseModel
 from models.user import User
 
+
 class FileStorage:
     """FileStorage Class
     This class attempts to persist data through the serialization and
@@ -25,7 +26,7 @@ class FileStorage:
     def all(self):
         """
         Returns All instance objects saved
-        Does this when reload is called
+        It does this when reload is called
         """
 
         return FileStorage.__objects
@@ -50,6 +51,7 @@ class FileStorage:
         """JSON SERIALIZATION
         This method serialies a Python instance to a JSON representation
         """
+
         obj_data = FileStorage.__objects
         file_path = FileStorage.__file_path
         obj_data_dict = {
