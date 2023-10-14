@@ -4,7 +4,7 @@ import cmd
 import models
 from models.base_model import BaseModel
 from models.user import User
-from models.engine.file_storage import FileStorage
+# from models.engine.file_storage import FileStorage
 
 
 class HBNBCommand(cmd.Cmd):
@@ -222,14 +222,15 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    HBNB_instance = HBNBCommand()
+    HBNBCommand.cmdloop()
+    # HBNB_instance = HBNBCommand()
 
-    if HBNB_instance.stdin.isatty():
-        HBNB_instance.cmdloop()
-    else:
-        while True:
-            try:
-                command = input("(hbnb)\n")
-            except EOFError:
-                break
-            HBNB_instance.onecmd(command)
+    # if HBNB_instance.stdin.isatty():
+    #     HBNB_instance.cmdloop()
+    # else:
+    #     while True:
+    #         try:
+    #             command = input("(hbnb)\n")
+    #         except EOFError:
+    #             break
+    #         HBNB_instance.onecmd(command)
