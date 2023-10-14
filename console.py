@@ -222,15 +222,18 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    # HBNBCommand.cmdloop()
     HBNB_instance = HBNBCommand()
+    HBNB_instance.cmdloop()
+    # HBNBCommand.cmdloop()
+    # HBNB_instance = HBNBCommand()
 
-    if HBNB_instance.stdin.isatty():
-        HBNB_instance.cmdloop()
-    else:
-        while True:
-            try:
-                command = input("(hbnb)\n")
-            except EOFError:
-                break
-            HBNB_instance.onecmd(command)
+    # if HBNB_instance.stdin.isatty():
+    #     HBNB_instance.cmdloop()
+else:
+    HBNB_instance = HBNBCommand()
+    while True:
+        try:
+            command = input("(hbnb)\n")
+        except EOFError:
+            break
+        HBNB_instance.onecmd(command)
