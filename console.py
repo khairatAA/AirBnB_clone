@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """This contains the entry point of the command interpreter"""
 import cmd
+
 import models
 from models.base_model import BaseModel
+from models.user import User
 from models.engine.file_storage import FileStorage
 
 
@@ -12,7 +14,8 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
     class_mapping = {
-        'BaseModel': BaseModel
+        'BaseModel': BaseModel,
+        'User': User
         # Add more class mappings as needed
     }
 
@@ -45,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
             return
-        
+
         if len(args) < 2:
             print("** instance id missing **")
             return
@@ -67,8 +70,10 @@ class HBNBCommand(cmd.Cmd):
 
     def help_show(self):
         """documentation for when 'help show' is called"""
-        print('Prints the string representation of an instance')
-        print('based on the class name and id\n')
+        print("\n".join([
+            "Usage: show [class_name e.g User] [id]",
+            "Prints the string representation of an instance",
+            "based on the class name and id"]))
 
     def do_destroy(self, line):
         """Deletes an instance based on the class name and id
@@ -77,18 +82,18 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print("** class name missing **")
             return
-        
+
         if len(args) < 2:
             print("** instance id missing **")
             return
-        
+
         cls_name = args[0]
         instance_id = args[1]
 
         if cls_name in HBNBCommand.class_mapping:
             instance_key = '{}.{}'.format(cls_name, instance_id)
             all_objs = models.storage.all()
-            
+
             if instance_key in all_objs.keys():
                 del models.storage.all()[instance_key]
                 models.storage.save()
@@ -100,9 +105,8 @@ class HBNBCommand(cmd.Cmd):
     def help_destroy(self):
         """documentation for when 'help destroy' is called"""
         print('Deletes an instance based on the class name and id '
-            '(save the change into the JSON file).\n'
-            )
-        
+              '(save the change into the JSON file).\n')
+
     def do_all(self, line):
         """Prints all string representation of all instances
         based or not on the class name."""
@@ -116,12 +120,12 @@ class HBNBCommand(cmd.Cmd):
                 all_objs_list.append(str(obj))
             print(all_objs_list)
             return
-        
+
         cls_name = args[0]
         if cls_name not in HBNBCommand.class_mapping:
             print("** class doesn't exist **")
             return
-        
+
         specific_objs_list = []
         for obj in all_objs.values():
             if type(obj).__name__ == cls_name:
@@ -131,26 +135,25 @@ class HBNBCommand(cmd.Cmd):
     def help_all(self):
         """documentation for when 'help all' is called"""
         print('Prints all string representation of all instances based '
-              'or not on the class name.\n'
-              )
-         
+              'or not on the class name.\n')
+
     def do_update(self, line):
         """Updates an instance based on the class name and id"""
         args = line.split()
         if not line:
             print("** class name missing **")
             return
-        
+
         if len(args) == 1:
             print("** instance id missing **")
             return
-        
+
         cls_name = args[0]
 
         if cls_name not in HBNBCommand.class_mapping:
             print("** class doesn't exist **")
             return
-        
+
         instance_id = args[1]
 
         instance_key = '{}.{}'.format(cls_name, instance_id)
@@ -159,26 +162,24 @@ class HBNBCommand(cmd.Cmd):
         if instance_key not in all_objs.keys():
             print("** no instance found **")
             return
-        
+
         if len(args) == 2:
             print("** attribute name missing **")
             return
-            
+
         if len(args) == 3:
             print("** value missing **")
             return
-        
+
         # attribute_name = args[2]
         # attribute_value = args[3]
 
         # instance_class = HBNBCommand.class_mapping[cls_name]
 
-        #if attribute_name in instance_class.__dict__:
+        # if attribute_name in instance_class.__dict__:
 
-    
-        #setattr(all_objs[instance_key, attribute_name, attribute_value])
-        #models.storage.save()
-
+        # setattr(all_objs[instance_key, attribute_name, attribute_value])
+        # models.storage.save()
 
     def do_quit(self, line):
         """This method is called when the quit is tiggered.
