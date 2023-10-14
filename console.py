@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """This contains the entry point of the command interpreter"""
 import cmd
-
 import models
 from models.base_model import BaseModel
 from models.user import User
 from models.engine.file_storage import FileStorage
+import sys
 
 
 class HBNBCommand(cmd.Cmd):
@@ -130,7 +130,7 @@ class HBNBCommand(cmd.Cmd):
         for obj in all_objs.values():
             if type(obj).__name__ == cls_name:
                 specific_objs_list.append(str(obj))
-            print(specific_objs_list)
+        print(specific_objs_list)
 
     def help_all(self):
         """documentation for when 'help all' is called"""
@@ -171,15 +171,23 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
             return
 
-        # attribute_name = args[2]
-        # attribute_value = args[3]
+        attribute_name = args[2]
+        attribute_value = args[3]
 
-        # instance_class = HBNBCommand.class_mapping[cls_name]
+        attribute_type = type(eval(attribute_value))
 
-        # if attribute_name in instance_class.__dict__:
+        if attribute_type not in (str, int, float):
+            return
+        setattr(all_objs[instance_key], attribute_name, eval(attribute_value))
+        models.storage.save()
 
-        # setattr(all_objs[instance_key, attribute_name, attribute_value])
-        # models.storage.save()
+    def help_update(self):
+        """documentation for when 'help update' is called"""
+        print('Updates an instance based on the class name and '
+              'id by adding or updating attribute (save the '
+              'change into the JSON file).'
+              'Ex: $ update BaseModel 1234-1234-1234 email "aibnb@mail.com" \n'
+              )
 
     def do_quit(self, line):
         """This method is called when the quit is tiggered.
@@ -187,6 +195,7 @@ class HBNBCommand(cmd.Cmd):
         Args:
         line: the line been read at the moment
         """
+        print()
         return True
 
     def help_quit(self):
@@ -199,6 +208,7 @@ class HBNBCommand(cmd.Cmd):
         Args:
         line: the line been read at the moment
         """
+        print()
         return True
 
     def help_EOF(self):
@@ -213,4 +223,14 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    HBNBCommand().cmdloop()
+    HBNB_instance = HBNBCommand()
+
+    if HBNB_instance.stdin.isatty():
+        HBNB_instance.cmdloop()
+    else:
+        while True:
+            try:
+                command = input("(hbnb)\n")
+            except EOFError:
+                break
+            HBNB_instance.onecmd(command)
