@@ -4,7 +4,7 @@ FileStorage class is a simple class
 It handles how data is stored & persisted within our application
 """
 import json
-from models.base_model import BaseModel
+from models.user import BaseModel
 from models.user import User
 
 
@@ -24,7 +24,10 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        """Returns All instance objects saved"""
+        """
+        Returns All instance objects saved
+        It does this when reload is called
+        """
 
         return FileStorage.__objects
 
@@ -48,6 +51,7 @@ class FileStorage:
         """JSON SERIALIZATION
         This method serialies a Python instance to a JSON representation
         """
+
         obj_data = FileStorage.__objects
         file_path = FileStorage.__file_path
         obj_data_dict = {
