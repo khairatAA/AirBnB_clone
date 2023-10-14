@@ -4,9 +4,8 @@ FileStorage class is a simple class
 It handles how data is stored & persisted within our application
 """
 import json
-from models.base_model import BaseModel
+from models.user import BaseModel
 from models.user import User
-
 
 class FileStorage:
     """FileStorage Class
@@ -24,7 +23,10 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        """Returns All instance objects saved"""
+        """
+        Returns All instance objects saved
+        Does this when reload is called
+        """
 
         return FileStorage.__objects
 
