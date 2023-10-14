@@ -49,7 +49,7 @@ class FileStorage:
 
     def save(self):
         """JSON SERIALIZATION
-        This method serialies a Python instance to a JSON representation
+        This method serialies a Python instance to a JSON rep.
         """
 
         obj_data = FileStorage.__objects
