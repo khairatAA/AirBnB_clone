@@ -5,7 +5,6 @@ import models
 from models.base_model import BaseModel
 from models.user import User
 from models.engine.file_storage import FileStorage
-import sys
 
 
 class HBNBCommand(cmd.Cmd):
@@ -234,3 +233,4 @@ if __name__ == '__main__':
             except EOFError:
                 break
             HBNB_instance.onecmd(command)
+            
