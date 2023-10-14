@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 FileStorage class is a simple class
 It handles how data is stored & persisted within our application

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 This class helps us create a user
 The User class inherits from BaseModel
