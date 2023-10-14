@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-FileStorage class is a simple class and it handles how data is stored & persisted
-Within our application
+FileStorage class is a simple class
+It handles how data is stored & persisted within our application
 """
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
@@ -22,7 +23,6 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
-
     def all(self):
         """Returns All instance objects saved"""
 
@@ -30,7 +30,7 @@ class FileStorage:
 
     def new(self, obj):
         """
-        This method populates the __objects dict with objects 
+        This method populates the __objects dict with objects
         where key is clase_name_of_instance.id
 
         Args:
@@ -66,11 +66,11 @@ class FileStorage:
         try:
             file_path = FileStorage.__file_path
             with open(file_path, "r", encoding="utf-8") as json_file:
-               obj_data = json.load(json_file)
-               for data in obj_data.values():
-                   if data["__class__"]:
-                       class_name = data["__class__"]
-                       del data["__class__"]
-                   self.new(eval(class_name)(**data))
+                obj_data = json.load(json_file)
+                for data in obj_data.values():
+                    if data["__class__"]:
+                        class_name = data["__class__"]
+                        del data["__class__"]
+                    self.new(eval(class_name)(**data))
         except FileNotFoundError:
             pass
