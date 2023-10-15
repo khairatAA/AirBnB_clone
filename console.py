@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This contains the entry point of the command interpreter"""
 import cmd
+import re
 import models
 from models.amenity import Amenity
 from models.base_model import BaseModel
@@ -27,6 +28,24 @@ class HBNBCommand(cmd.Cmd):
         'Review': Review
         # Add more class mappings as needed
     }
+
+    def precmd(self, line):
+        """Intercepting command flow
+        Commands are intercepted and redesigned
+        This allows for valid alternate means of passing a command
+        USAGE:
+            User.all() === all User
+            BaseModel.create === create BaseModel
+
+        Return:
+            Returns the precmd function with the redesigned command OR
+            The valid command entered
+        """
+
+        if "." in line:
+            line = re.sub(r'(?<!@)[.,(]', ' ', re.sub(r'[),"]', '', line))
+            line = re.sub(r'(\w+)\s+(\w+)', r'\2 \1', line, 1)
+        return cmd.Cmd.precmd(self, line)
 
     def do_create(self, line):
         """Creates a new instance of BaseModel, saves it"""
