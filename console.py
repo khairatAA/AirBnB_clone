@@ -217,6 +217,47 @@ class HBNBCommand(cmd.Cmd):
               'Ex: $ update BaseModel 1234-1234-1234 email "aibnb@mail.com" \n'
               )
 
+    def do_count(self, line):
+        """Count instances
+        This module returns the count of instances saved
+
+        Args:
+            line: this is the expected to be the command,
+                  (count User OR User.count())
+
+        Return:
+            Prints the count of the instances of the class saved. OR
+            Appropriate error message
+            Return on either success or failure
+        """
+
+        count = 0
+        args = line.split()
+        if len(args) == 1:
+            cls_name = args[0]
+            if cls_name not in HBNBCommand.class_mapping:
+                print("** class doesn't exist **")
+                return
+
+            all_objs = models.storage.all()
+            for obj in all_objs.values():
+                if type(obj).__name__ == cls_name:
+                    count = count + 1
+            print(count)
+            return
+        else:
+            print("** class name missing **")
+            return
+
+    def help_count(self):
+        """Documentation on how to use count"""
+        print("\n".join([
+                         "USAGE: ",
+                         "1. count [User]: Replace User with valid class name",
+                         "2. User.count(): Replace User with valid class name",
+                         " ",
+                         "prints number of instances of the cls_name saved"]))
+
     def do_quit(self, line):
         """This method is called when the quit is tiggered.
         The program exits in a clean way.
