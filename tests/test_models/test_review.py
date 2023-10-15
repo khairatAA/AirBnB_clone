@@ -2,6 +2,7 @@
 from datetime import datetime
 from models.review import Review
 import unittest
+import os
 
 
 class TestReview(unittest.TestCase):
@@ -10,6 +11,11 @@ class TestReview(unittest.TestCase):
     def setUp(self):
         """Creates a simple object or instance of Review"""
         self.my_model = Review()
+
+    def tearDown(self):
+        """Clean up method"""
+        if os.path.exists("file.json"):
+            os.remove("file.json")
 
     def test_types(self):
         """Test the attribute type"""

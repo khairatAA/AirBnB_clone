@@ -2,6 +2,7 @@
 from datetime import datetime
 from models.place import Place
 import unittest
+import os
 
 
 class TestPlace(unittest.TestCase):
@@ -10,6 +11,11 @@ class TestPlace(unittest.TestCase):
     def setUp(self):
         """Creates a simple object or instance of Place"""
         self.my_model = Place()
+
+    def tearDown(self):
+        """Clean up method"""
+        if os.path.exists("file.json"):
+            os.remove("file.json")
 
     def test_types(self):
         """Test the attribute type"""

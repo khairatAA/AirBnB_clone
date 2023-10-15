@@ -3,9 +3,7 @@
 from datetime import datetime
 from models.base_model import BaseModel
 import unittest
-"""
-Importing the BaseModle class and the unittest
-"""
+import os
 
 
 class TestBaseModel(unittest.TestCase):
@@ -14,6 +12,11 @@ class TestBaseModel(unittest.TestCase):
     def setUp(self):
         """Creates a imple object or instance of BaseModel"""
         self.my_model = BaseModel()
+
+    def tearDown(self):
+        """Clean up method"""
+        if os.path.exists("file.json"):
+            os.remove("file.json")
 
     def test_types(self):
         """Test the attribute type"""
