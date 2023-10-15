@@ -2,6 +2,7 @@
 from datetime import datetime
 from models.amenity import Amenity
 import unittest
+import os
 
 
 class TestAmenity(unittest.TestCase):
@@ -10,6 +11,11 @@ class TestAmenity(unittest.TestCase):
     def setUp(self):
         """Creates a simple object or instance of Amenity"""
         self.my_model = Amenity()
+    
+    def tearDown(self):
+        """Clean up method"""
+        if os.path.exists("file.json"):
+            os.remove("file.json")
 
     def test_types(self):
         """Test the attribute type"""

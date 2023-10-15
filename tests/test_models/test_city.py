@@ -2,6 +2,7 @@
 from datetime import datetime
 from models.city import City
 import unittest
+import os
 
 
 class TestCity(unittest.TestCase):
@@ -10,6 +11,11 @@ class TestCity(unittest.TestCase):
     def setUp(self):
         """Creates a simple object or instance of City"""
         self.my_model = City()
+
+    def tearDown(self):
+        """Clean up method"""
+        if os.path.exists("file.json"):
+            os.remove("file.json")
 
     def test_types(self):
         """Test the attribute type"""
