@@ -11,7 +11,7 @@ class TestAmenity(unittest.TestCase):
     def setUp(self):
         """Creates a simple object or instance of Amenity"""
         self.my_model = Amenity()
-    
+
     def tearDown(self):
         """Clean up method"""
         if os.path.exists("file.json"):
