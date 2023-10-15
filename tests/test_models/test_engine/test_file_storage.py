@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This is the unittest file for file_storage.py file"""
+import models
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 import unittest
@@ -47,3 +48,6 @@ class TestFileStorage(unittest.TestCase):
         obj_key = "{}.{}".format(type(obj).__name__, obj.id)
         self.my_storage.reload()
         self.assertIn(obj_key, objects)
+
+    def test_storage_instance(self):
+        self.assertIsInstance(models.storage, FileStorage)
