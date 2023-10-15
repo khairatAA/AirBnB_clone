@@ -1,12 +1,15 @@
 # Airbnb Clone - The console
 
+![HBNB](https://mma.prnewswire.com/media/1121685/Airbnb_Logo.jpg?p=twitter "HBNB Logo")
+
 ## Table of Content
 
-- [Background-Context] (#Background-Context)
-- [What can the console do???] (#What can the console do???)
-- [Installation] (#Installation)
-- [Execution] (#Execution)
-- [Authors] (#Authors)
+- [Background-Context](#Background-Context)
+- [The-console](#The-console)
+- [Installation](#Installation)
+- [Execution](#Execution)
+- [Usage](#Usage)
+- [Authors](#Authors)
 
 ## Background-Context
 
@@ -70,7 +73,25 @@ EOF  help  quit
 $
 ```
 
+## Usage
+
+- Type the `help` command to see how to use to navigate the console.
+
+```
+(hbnb)
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+
+(hbnb) help all
+Prints all string representation of all instances based or not on the class name.
+
+(hbnb)
+```
+
 ## Authors
 
-Adesina Khairat <khairatadesina01@gmail.com>
-Adebanjo Emmanuel <emmanueladebanjo01@gmail.com>
+- Adesina Khairat <khairatadesina01@gmail.com>
+- Adebanjo Emmanuel <emmanueladebanjo01@gmail.com>
