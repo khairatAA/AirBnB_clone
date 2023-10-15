@@ -38,7 +38,12 @@ class TestFileStorage(unittest.TestCase):
     def test_save_and_reload(self):
         """test save and reload method"""
         obj = BaseModel()
+        self.my_storage.new(obj)
         obj.save()
+        new_storage = FileStorage()
+        new_storage.reload()
+        objects = new_storage.all()
+        self.assertEqual(len(objects), 13)
         obj_key = "{}.{}".format(type(obj).__name__, obj.id)
         self.my_storage.reload()
-        self.assertIn(obj_key, self.my_storage.all())
+        self.assertIn(obj_key, objects)

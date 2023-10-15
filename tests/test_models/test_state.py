@@ -3,6 +3,7 @@ from datetime import datetime
 from models.base_model import BaseModel
 from models.state import State
 import unittest
+import os
 
 
 class TestState(unittest.TestCase):
@@ -11,6 +12,11 @@ class TestState(unittest.TestCase):
     def setUp(self):
         """Creates a simple object or instance of BaseModel"""
         self.my_model = State()
+
+    def tearDown(self):
+        """Clean up method"""
+        if os.path.exists("file.json"):
+            os.remove("file.json")
 
     def test_types(self):
         """Test the attribute type"""
