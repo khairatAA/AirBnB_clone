@@ -4,7 +4,7 @@ from models.amenity import Amenity
 import unittest
 
 
-class TestState(unittest.TestCase):
+class TestAmenity(unittest.TestCase):
     """Run tests for the Amenity class"""
 
     def setUp(self):

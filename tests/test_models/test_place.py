@@ -4,7 +4,7 @@ from models.place import Place
 import unittest
 
 
-class TestState(unittest.TestCase):
+class TestPlace(unittest.TestCase):
     """Run tests for the Place class"""
 
     def setUp(self):
