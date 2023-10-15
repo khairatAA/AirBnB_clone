@@ -4,7 +4,7 @@ from models.city import City
 import unittest
 
 
-class TestState(unittest.TestCase):
+class TestCity(unittest.TestCase):
     """Run tests for the City class"""
 
     def setUp(self):

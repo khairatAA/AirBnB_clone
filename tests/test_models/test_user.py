@@ -4,7 +4,7 @@ from models.user import User
 import unittest
 
 
-class TestState(unittest.TestCase):
+class TestUser(unittest.TestCase):
     """Run tests for the User class"""
 
     def setUp(self):

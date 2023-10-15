@@ -4,7 +4,7 @@ from models.review import Review
 import unittest
 
 
-class TestState(unittest.TestCase):
+class TestReview(unittest.TestCase):
     """Run tests for the Review class"""
 
     def setUp(self):
