@@ -4,8 +4,8 @@
 
 ## Table of Content
 
-- [Background-Context](#Background-Context)
-- [The-console](#The-console)
+- [Background Context](#Background-Context)
+- [The console](#The-console)
 - [Installation](#Installation)
 - [Execution](#Execution)
 - [Usage](#Usage)
@@ -17,7 +17,7 @@ Welcome to the `AirBnB clone project!`.
 
 This project represents a significant milestone as it marks the first step towards building a full web application – the AirBnB clone. This initial phase is crucial because it lays the foundation for the entire project, including HTML/CSS templating, database storage, API, and front-end integration.
 
-## What can the console do???
+## The console
 
 - Create a new object (ex: a new User or a new Place)
 - Retrieve an object from a file, a database etc…
@@ -75,7 +75,7 @@ $
 
 ## Usage
 
-- Type the `help` command to see how to use to navigate the console.
+Type the `help` command to see how to use to navigate the console.
 
 ```
 (hbnb)
