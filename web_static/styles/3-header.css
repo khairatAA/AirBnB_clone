@@ -2,10 +2,11 @@ header {
     background-color: white;
     height: 70px;
     width: 100%;
+    text-align: center;
     border-bottom: 1px solid #CCCCCC;
     padding-left: 20px;
-    display: flex;
     align-items: center;
+    line-height: 70px;
 }
 
 header .hbnb_logo {
@@ -14,6 +15,5 @@ header .hbnb_logo {
     background-image: url('../images/hbnb_logo.png');
     background-repeat: no-repeat;
     background-position: left;
-    align-self: flex-start;
     justify-self: center;
 }
