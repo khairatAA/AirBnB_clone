@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AirBnB_clone</title>
+    <link
+      rel="shortcut icon"
+      href="images/hbnb_browser_logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="styles/4-common.css" />
+    <link rel="stylesheet" href="styles/3-header.css" />
+    <link rel="stylesheet" href="styles/3-footer.css" />
+    <link rel="stylesheet" href="styles/6-filters.css" />
+    <link rel="stylesheet" href="styles/7-places.css" />
+  </head>
+  <body>
+    <!-- html that  displays a header, footer and a filters box with dropdown and results. -->
+
+    <!-- header section -->
+    <header>
+      <!-- Added the hbnb_logo -->
+      <div class="hbnb_logo"></div>
+    </header>
+    <!-- header section ends here -->
+
+    <!-- Search filter -->
+    <div class="container">
+      <!-- fliter section -->
+      <section class="filters">
+        <!-- location filter -->
+        <div class="locations">
+          <h3>States</h3>
+          <h4>California, Arizona...</h4>
+
+          <!-- dropdown filter -->
+          <div class="popover">
+            <ul>
+              <li class="state">
+                <h2>Arizona:</h2>
+                <ul>
+                  <li>Phoenix</li>
+                  <li>Sedona</li>
+                </ul>
+              </li>
+              <li class="state">
+                <h2>California:</h2>
+                <ul>
+                  <li>San Francisco</li>
+                  <li>Los Altos</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- dropdown filter ends -->
+        </div>
+
+        <!-- amenities filter -->
+        <div class="amenities">
+          <h3>Amenities</h3>
+          <h4>Internet, Kitchen...</h4>
+          <!-- dropdown filter -->
+          <div class="popover">
+            <ul>
+              <li>Internet</li>
+              <li>TV</li>
+              <li>Kitchen</li>
+              <li>Iron</li>
+            </ul>
+          </div>
+          <!-- dropdown filter ends -->
+        </div>
+
+        <!-- Search button -->
+        <button>Search</button>
+      </section>
+      <!-- filter section ends here -->
+
+      <!-- places section -->
+      <section class="places">
+        <h1>Places</h1>
+        <div class="place-list">
+          <article class="place">
+            <h2>My home</h2>
+          </article>
+          <article class="place">
+            <h2>Tiny house</h2>
+          </article>
+          <article class="place">
+            <h2>A suite</h2>
+          </article>
+        </div>
+      </section>
+      <!-- places section ends here -->
+    </div>
+    <!-- filter section ends here -->
+
+    <!-- footer section -->
+    <footer>Best School</footer>
+    <!-- footer section ends here -->
+  </body>
+</html>
