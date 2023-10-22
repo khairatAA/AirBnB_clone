@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AirBnB_clone</title>
+    <link
+      rel="shortcut icon"
+      href="images/hbnb_browser_logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="styles/4-common.css" />
+    <link rel="stylesheet" href="styles/3-header.css" />
+    <link rel="stylesheet" href="styles/3-footer.css" />
+    <link rel="stylesheet" href="styles/6-filters.css" />
+    <link rel="stylesheet" href="styles/8-places.css" />
+  </head>
+  <body>
+    <!-- html that  displays a header, footer and a filters box with dropdown and results. -->
+
+    <!-- header section -->
+    <header>
+      <!-- Added the hbnb_logo -->
+      <div class="hbnb_logo"></div>
+    </header>
+    <!-- header section ends here -->
+
+    <!-- Search filter -->
+    <div class="container">
+      <!-- fliter section -->
+      <section class="filters">
+        <!-- location filter -->
+        <div class="locations">
+          <h3>States</h3>
+          <h4>California, Arizona...</h4>
+
+          <!-- dropdown filter -->
+          <div class="popover">
+            <ul>
+              <li class="state">
+                <h2>Arizona:</h2>
+                <ul>
+                  <li>Phoenix</li>
+                  <li>Sedona</li>
+                </ul>
+              </li>
+              <li class="state">
+                <h2>California:</h2>
+                <ul>
+                  <li>San Francisco</li>
+                  <li>Los Altos</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- dropdown filter ends -->
+        </div>
+        <!-- Location ends -->
+
+        <!-- amenities filter -->
+        <div class="amenities">
+          <h3>Amenities</h3>
+          <h4>Internet, Kitchen...</h4>
+          <!-- dropdown filter -->
+          <div class="popover">
+            <ul>
+              <li>Internet</li>
+              <li>TV</li>
+              <li>Kitchen</li>
+              <li>Iron</li>
+            </ul>
+          </div>
+          <!-- dropdown filter ends -->
+        </div>
+
+        <!-- Search button -->
+        <button>Search</button>
+      </section>
+      <!-- filter section ends here -->
+
+      <!-- places section -->
+      <section class="places">
+        <h1>Places</h1>
+        <!--list of places -->
+        <div class="place-list">
+          <!-- Article on my home places -->
+          <article class="place">
+            <h2>My home</h2>
+            <!-- Price -->
+            <div class="price_by_night">
+              <h2>$80</h2>
+            </div>
+
+            <!-- Information section -->
+            <div class="information">
+              <!-- Guests -->
+              <div class="max_guest">
+                <div class="guest_icon"></div>
+                <p>2 Guests</p>
+              </div>
+              <!-- Guests Ends -->
+
+              <!-- Bedroom -->
+              <div class="number_rooms">
+                <div class="bed_icon"></div>
+                <p>1 Bedroom</p>
+              </div>
+              <!-- Bedroom Ends -->
+
+              <!-- Bathroom -->
+              <div class="number_bathrooms">
+                <div class="bathroom_icon"></div>
+                <p>1 Bathroom</p>
+              </div>
+              <!-- Bathroom Ends -->
+            </div>
+            <!-- Information section Ends-->
+
+            <!-- User section -->
+            <div class="user">
+              <p><b>Owner: </b>John Lennon</p>
+            </div>
+            <!-- User section ends -->
+
+            <!-- Description section -->
+            <div class="description">
+              <p>
+                This is a lovely 1 bedroom and 1 bathroom apartment that can
+                accomodate 2 people. It located at the center of Shanghai and
+                next to subway line 1. 1 stop to People Square, 2 stops to Bund,
+                3 stops to Jigan Temple.
+              </p>
+            </div>
+            <!-- Description section ends -->
+          </article>
+          <!-- Article on my home ends -->
+
+          <!-- Article on tiny house -->
+          <article class="place">
+            <h2>Tiny house</h2>
+
+            <!-- Price -->
+            <div class="price_by_night">
+              <h2>$65</h2>
+            </div>
+
+            <!-- Information section -->
+            <div class="information">
+              <!-- Guests -->
+              <div class="max_guest">
+                <div class="guest_icon"></div>
+                <p>4 Guests</p>
+              </div>
+              <!-- Guests Ends -->
+
+              <!-- Bedroom -->
+              <div class="number_rooms">
+                <div class="bed_icon"></div>
+                <p>2 Bedroom</p>
+              </div>
+              <!-- Bedroom Ends -->
+
+              <!-- Bathroom -->
+              <div class="number_bathrooms">
+                <div class="bathroom_icon"></div>
+                <p>1 Bathroom</p>
+                <!-- Bathroom Ends -->
+              </div>
+            </div>
+            <!-- Information section Ends-->
+
+            <!-- User section -->
+            <div class="user">
+              <p><b>Owner: </b>Adrienne</p>
+            </div>
+            <!-- User section ends -->
+
+            <!-- Description section -->
+            <div class="description">
+              <p>
+                Our placee is a private, affordable stand-alone guest house
+                centrally located just minutes to French Quarters, downtown, the
+                Fair Grounds (Jazz Fest) and City Park. Te guest house is a
+                quaint, 400 square ft. with a full bath, mini kitchen, & lving
+                room. The extra high ceilings make the home fell more spacious.
+                The sofa converts to a bed also. We have a hand made counter
+                area that adds character to the room and a great porch/deck to
+                relax on and have a glass of Meriot.
+              </p>
+            </div>
+            <!-- Description section ends -->
+          </article>
+          <!-- Article on tiny house ends -->
+
+          <!-- Article on a suite -->
+          <article class="place">
+            <h2>A suite</h2>
+
+            <!-- Price -->
+            <div class="price_by_night">
+              <h2>$190</h2>
+            </div>
+
+            <!-- Information section -->
+            <div class="information">
+              <!-- Guests -->
+              <div class="max_guest">
+                <div class="guest_icon"></div>
+                <p>4 Guests</p>
+              </div>
+              <!-- Guests Ends -->
+
+              <!-- Bedroom -->
+              <div class="number_rooms">
+                <div class="bed_icon"></div>
+                <p>4 Bedroom</p>
+              </div>
+              <!-- Bedroom Ends -->
+
+              <!-- Bathroom -->
+              <div class="number_bathrooms">
+                <div class="bathroom_icon"></div>
+                <p>4 Bathroom</p>
+                <!-- Bathroom Ends -->
+              </div>
+            </div>
+            <!-- Information section Ends-->
+
+            <div class="user">
+              <p><b>Owner: </b>Khairat Adesina</p>
+            </div>
+            <!-- User section ends -->
+
+            <!-- Description section -->
+            <div class="description">
+              <p>
+                Unveil the splendor of Arizona within our upscale four-bedroom
+                suite, designed to accommodate up to four distinguished guests.
+                A harmonious blend of modern elegance and luxurious comfort
+                awaits. Indulge in the extravagance of four lavish bathrooms,
+                each meticulously crafted to provide a private retreat. Witness
+                the grandeur of an Arizona sunset from your private terrace,
+                where you can savor the moment with a glass of your preferred
+                libation.
+              </p>
+            </div>
+            <!-- Description section ends -->
+          </article>
+          <!-- Article on a suite ends -->
+        </div>
+      </section>
+      <!-- places section ends here -->
+    </div>
+    <!-- filter section ends here -->
+
+    <!-- footer section -->
+    <footer>Best School</footer>
+    <!-- footer section ends here -->
+  </body>
+</html>
