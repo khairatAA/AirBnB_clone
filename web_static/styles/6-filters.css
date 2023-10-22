@@ -1,0 +1,121 @@
+/* ==============-The css for the filter elements ========================*/
+
+/* filter container */
+.container .filters {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+/* filter button */
+.container .filters button {
+    flex: 0 0 20%;
+    margin: auto;
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: #FFFFFF;
+    height: 48px;
+    width: 20%;
+    border-radius: 4px;
+    border: none;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+/* when the button is on hover */
+.container .filters button:hover {
+    opacity: 90%;
+}
+
+/* location filter */
+.container .filters .locations {
+    flex: 0 0 25%;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid  #DDDDDD;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 40px;
+}
+
+/* =========== Amenities ============== */
+
+/* Amenities filter */
+.container .filters .amenities {
+    flex: 0 0 25%;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+    align-items: flex-start;
+    position: relative;
+}
+
+/*Amenities list styling*/
+.amenities ul li {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 10px;
+}
+
+/*=============== Location and Amenities ================= */
+
+/* location  and Amenities title  */
+.locations h3, .amenities h3 {
+    font-weight: 600;
+    margin: 0;
+}
+
+/* location and Amenities sub-title */
+.locations h4, .amenities h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Location and Amenities popover */
+.popover {
+    display: none;
+    list-style: none;
+    background-color: #FAFAFA;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    position:absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Location and Amenities ul */
+.locations ul, .amenities ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Location and Amentiies list */
+.locations ul .state, .locations ul .state li {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 10px;
+}
+
+/* To show the popover on hover */
+.popover.show {
+    display: block;
+}
+
+/*  caling the popover on location and Amenities */
+.locations:hover .popover, .amenities:hover .popover{
+    display: block;
+}
