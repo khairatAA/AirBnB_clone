@@ -1,3 +1,6 @@
+/* ==============-The css for the filter elements ========================*/
+
+/* filter container */
 .container .filters {
     background-color: white;
     height: 70px;
@@ -9,6 +12,7 @@
     justify-content: end;
 }
 
+/* filter button */
 .container .filters button {
     font-size: 18px;
     background-color: #FF5A5F;
@@ -21,6 +25,7 @@
     cursor: pointer;
 }
 
+/* when the button is on hover */
 .container .filters button:hover {
     opacity: 90%;
 }
