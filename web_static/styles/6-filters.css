@@ -48,7 +48,7 @@
 /* =========== Amenities ============== */
 
 /* Amenities filter */
-.container .filters .amenities {
+.container .filters .Amenities {
     flex: 0 0 25%;
     height: 100%;
     width: 25%;
@@ -61,7 +61,7 @@
 }
 
 /*Amenities list styling*/
-.amenities ul li {
+.Amenities ul li {
     border-bottom: 1px solid #DDDDDD;
     padding: 10px;
 }
@@ -69,13 +69,13 @@
 /*=============== Location and Amenities ================= */
 
 /* location  and Amenities title  */
-.locations h3, .amenities h3 {
+.locations h3, .Amenities h3 {
     font-weight: 600;
     margin: 0;
 }
 
 /* location and Amenities sub-title */
-.locations h4, .amenities h4 {
+.locations h4, .Amenities h4 {
     font-weight: 400;
     font-size: 14px;
     margin: 0;
@@ -98,7 +98,7 @@
 }
 
 /* Location and Amenities ul */
-.locations ul, .amenities ul {
+.locations ul, .Amenities ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -116,6 +116,6 @@
 }
 
 /*  caling the popover on location and Amenities */
-.locations:hover .popover, .amenities:hover .popover{
+.locations:hover .popover, .Amenities:hover .popover{
     display: block;
 }
